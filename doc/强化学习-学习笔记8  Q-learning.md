@@ -22,7 +22,7 @@ Q-Learning
 
 - Q-learning 是训练最优动作价值函数$$Q^*(s,a)$$
 
-- TD target :$$y_t = r_t + \gamma \cdot {\mathop{max}\limits_{a}Q^*(s_{t+1},a_{t+1})}$$，对 Q 求最大化
+- TD target :$y_t = r_t + \gamma \cdot {\mathop{max}\limits_{a}Q^*(s_{t+1},a_{t+1})}$，对 Q 求最大化
 
   > 注意这里就是区别。
 
@@ -108,4 +108,4 @@ DQN $Q^*({s},{a};w)$近似  $Q^*({s},{a}) $，输入是当前状态 s，输出�
 > - 观测一个transition $({s_t},{a_t},{r_t},{s_{t+1}})$
 > - TD target: ${r_t} + \gamma \cdot \mathop{max}\limits_{a} Q^*({s_{t+1}},{a};w)$
 > - TD error: $\delta_t = Q^*({s_t},{a_t};w) - y_t$
-> - 梯度下降，更新参数: $w \leftarrow w -\alpha \cdot \delta_t \cdot \frac{{s_t},{a_t};w}{\partial w}$
+> - 梯度下降，更新参数: $w \leftarrow w -\alpha \cdot \delta_t \cdot \frac{\partial Q^*({s_t},{a_t};w)}{\partial w}$
